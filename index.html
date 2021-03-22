@@ -51,7 +51,10 @@
                 }
 
                 if(first_name !== "" && last_name !== "" && date_from !== "" && date_to !== ""){
-                    message = "Thanks, "+ first_name + " " + last_name + "! Your Cruise leaves on " + date_from + " and returns on " + date_to + "!";
+                    if(date_from > date_to)
+                        message = "Oops! 'To' Date cannot be earlier than 'From' Date!";
+                    else
+                        message = "Thanks, "+ first_name + " " + last_name + "! Your Cruise leaves on " + date_from + " and returns on " + date_to + "!";
                     $("#dialog p").text(message);
                     $("#dialog").dialog();
                 }
