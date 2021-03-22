@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Village88 Training | jQuery | Date Validations">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(function(){
+                $("#date_from, #date_to" ).datepicker();
+            });
+
+            $("form").submit(function(){
+                var first_name = $("#first_name").val();
+                var last_name = $("#last_name").val();
+                var date_from = $("#date_from").val();
+                var date_to = $("#date_to").val();
+                var message;
+
+                if(first_name === ""){
+                    $("#first_name").parent().siblings("p").show();
+                }
+                else{
+                    $("#first_name").parent().siblings("p").hide();
+                }
+
+                if(last_name === ""){
+                    $("#last_name").parent().siblings("p").show();
+                }
+                else{
+                    $("#last_name").parent().siblings("p").hide();
+                }
+
+                if(date_from === ""){
+                    $("#date_from").parent().siblings("p").show();
+                }
+                else{
+                    $("#date_from").parent().siblings("p").hide();
+                }
+
+                if(date_to === ""){
+                    $("#date_to").parent().siblings("p").show();
+                }
+                else{
+                    $("#date_to").parent().siblings("p").hide();
+                }
+
+                if(first_name !== "" && last_name !== "" && date_from !== "" && date_to !== ""){
+                    message = "Thanks, "+ first_name + " " + last_name + "! Your Cruise leaves on " + date_from + " and returns on " + date_to + "!";
+                    $("#dialog p").text(message);
+                    $("#dialog").dialog();
+                }
+                return false;
+            });
+        });
+    </script>
+    <title>Date Validations</title>
+</head>
+<body>
+    <header>
+        <h1>Village88 Training</h1>
+        <small>Date Validations</small>
+    </header>
+    <section>
+        <h1>Welcome to the Coding Dojo plan-a-cruise!</h1>
+        <form>
+            <div>
+                <label>First Name: <input type="text" name="first_name" id="first_name"></label>
+                <p>Please enter your first name!</p>
+            </div>
+            <div>
+                <label>Last Name: <input type="text" name="last_name" id="last_name"></label>
+                <p>Please enter your last name!</p>
+            </div>
+            <div>
+                <label>Form: <input type="text" id="date_from"></label>
+                <p>Please choose a date!</p>
+            </div>
+            <div>
+                <label>To: <input type="text" id="date_to"></label>
+                <p>Please choose a date!</p>
+            </div>
+            <input class="submitBtn" type="submit" value="Check Dates!">
+        </form>
+        <div id="dialog" title="Hey!">
+            <p></p>
+        </div>
+    </section>
+</body>
+</html>

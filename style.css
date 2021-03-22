@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Arial";
+}
+
+header {
+    background-color: #222222;
+    text-align: center;
+    color: #007fff;
+    padding: 40px;
+}
+
+header h1 {
+    font-size: 45px;
+}
+
+section{
+    padding: 20px;
+}
+
+section h1{
+    text-align: center;
+}
+
+form{
+    margin: 0 auto;
+    padding: 20px;
+    width: 500px;
+}
+
+form label, p{
+    display: inline-block;
+    padding: 10px;
+}
+
+form p{
+    font-size: 12px;
+    display: none;
+    color: red;
+}
+
+.submitBtn{
+    background-color: #007fff;
+    margin: 10px;
+    color: white;
+    border: none;
+    padding: 5px;
+    width: 100px;
+}
